@@ -1,7 +1,7 @@
 # Testing in Android
 
-Building on [Testing](../testing.md), we will now look at how unit tests work
-in AOSP. Use the `rust_test` module for your unit tests:
+Building on [Testing](../testing.md), we will now look at how unit tests work in
+AOSP. Use the `rust_test` module for your unit tests:
 
 _testing/Android.bp_:
 
