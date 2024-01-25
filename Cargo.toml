@@ -2,6 +2,7 @@
 members = [
   "mdbook-exerciser",
   "mdbook-course",
+  "src/android/testing",
   "src/types-and-values",
   "src/control-flow-basics",
   "src/tuples-and-arrays",
@@ -14,7 +15,6 @@ members = [
   "src/std-traits",
   "src/iterators",
   "src/modules",
-  "src/testing",
   "src/memory-management",
   "src/smart-pointers",
   "src/borrowing",
