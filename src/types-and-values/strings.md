@@ -36,7 +36,14 @@ later, but this is enough for subsequent slides and exercises to use strings.
 
 - The `&` in `&str` indicates that this is a reference. We will cover references
   later, so for now just think of `&str` as a unit meaning "a read-only string".
-
+  
+  ```rust,editable
+  let greeting = "Greetings" // -> This type of string declaration is by default comes under &str type.
+  let mut sentence:String = greeting; // Output : Error because `greeting` is &str type. 
+  // You can convert `&str` to `String` by `to_string()` function.
+  // i.e 
+  let mut sentence = greeting.to_string()
+  ```
 - The commented-out line is indexing into the string by byte position. `12..13`
   does not end on a character boundary, so the program panics. Adjust it to a
   range that does, based on the error message.
@@ -52,5 +59,6 @@ later, but this is enough for subsequent slides and exercises to use strings.
       println!("<a href=\"link.html\">link</a>");
   }
   ```
+- ``` println!("{:?}",person)``` -> This way you can print the complete struct object,array,vector or any type of large data.Here ```person``` can be array,struct or vector
 
 </details>
