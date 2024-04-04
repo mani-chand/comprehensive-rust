@@ -18,21 +18,18 @@
   }
   function getCodeFromPlayground() {
     var codes = [];
-    Array.from(document.querySelectorAll(".playground")).forEach(function (
-      pre_block
-    ) {
-      let code_block = pre_block.querySelector("code");
-      let editor = window.ace.edit(code_block);
-      editor.session.on("change", function () {
-        let code = editor.getValue();
-        codes.push(code);
-        localStorage.setItem(
-          `${window.location.href}₹code`,
-          JSON.stringify(codes)
-        );
-      });
+    var editors = []; // Array to store references to Ace editors
+    Array.from(document.querySelectorAll(".playground")).forEach(function (pre_block, index) {
+        let code_block = pre_block.querySelector("code");
+        let editor = window.ace.edit(code_block);
+        editors.push(editor); // Store reference to editor
+        editor.session.on("change", function () {
+            let code = editor.getValue();
+            codes[index] = code; // Update the corresponding index in the codes array
+            localStorage.setItem(`${window.location.href}₹code`, JSON.stringify(codes));
+        });
     });
-  }
+}
   setCodeToPlayground();
   getCodeFromPlayground();
 })();
